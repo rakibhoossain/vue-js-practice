@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('/post', 'PostController');
 Route::get('/posts', 'PostController@posts');
+Route::post('/image', 'PostController@image');

@@ -49,6 +49,7 @@ VuejsDatatableFactory.useDefaultType( false )
 
 Vue.component('paginate-component', require('./components/PaginateComponent.vue').default);
 Vue.component('post-component', require('./components/PostListComponent.vue').default);
+Vue.component('crop-upload', require('./components/CropUploadComponent.vue').default);
 Vue.component('table-component', require('./components/DataTableComponent.vue').default);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);

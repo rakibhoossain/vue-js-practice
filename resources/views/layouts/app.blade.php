@@ -76,6 +76,14 @@
         <main class="py-4">
             @yield('content')
             <div>
+                <example-component></example-component>
+            </div>
+            <div>
+                <crop-upload></crop-upload>
+            </div>
+
+            
+            <div>
                 <paginate-component></paginate-component>
             </div>
             <div>
@@ -85,9 +93,7 @@
             <div>
             <post-component></post-component>
             </div>
-            <div>
-            <example-component></example-component>
-            </div>
+
         </main>
     </div>
 

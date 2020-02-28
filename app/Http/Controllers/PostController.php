@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Image;
+use Storage;
 
 class PostController extends Controller
 {
@@ -46,6 +48,25 @@ class PostController extends Controller
         if(Post::create($request->all())){
             return response(['message' => 'Post created success'], Response::HTTP_CREATED);
         }
+    }
+
+    public function image(Request $request){
+        if ($request->hasFile('file')) {
+
+            $image = $request->file;
+            $name = $request->name.'.jpg';
+            $path = 'public/images/' . $name;
+
+            $img = Image::make($image);
+
+            Storage::disk('local')->put($path, $img->encode());
+
+            $url = asset('storage/images/' . $name);
+
+            return response()->json(['url' => $url]);
+        }
+
+        return response()->json(['error' => 'No file']);
     }
 
     /**
