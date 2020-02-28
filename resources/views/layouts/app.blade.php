@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/pace.css') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -75,6 +76,13 @@
         <main class="py-4">
             @yield('content')
             <div>
+                <paginate-component></paginate-component>
+            </div>
+            <div>
+                <table-component></table-component>
+            </div>
+            
+            <div>
             <post-component></post-component>
             </div>
             <div>
@@ -82,5 +90,8 @@
             </div>
         </main>
     </div>
+
+    <script src="{{ asset('js/pace.min.js') }}"></script>
+
 </body>
 </html>

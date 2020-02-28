@@ -21,6 +21,10 @@ class PostController extends Controller
         return response()->json($data);
     }
 
+    public function posts(){
+        return response()->json(Post::get());
+    }
+
     /**
      * Show the form for creating a new resource.
      *

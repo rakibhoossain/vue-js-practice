@@ -13,7 +13,9 @@
 </template>
 
 <script>
+import InfiniteLoading from 'vue-infinite-loading';
 export default {
+    components: { InfiniteLoading },
   data() {
     return {
       page: 1,
